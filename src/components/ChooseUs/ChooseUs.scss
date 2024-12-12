@@ -1,0 +1,44 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+
+.choose-us {
+  background-color: $background-black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    text-align: left !important;
+    margin-right: auto;
+    width: 49%;
+
+    @include mobile {
+      width: 100%;
+      align-self: flex-start;
+    }
+
+    @include tablet {
+      width: 100%;
+      align-self: flex-start;
+    }
+
+    @include desktop {
+      width: 100%;
+      align-self: flex-start;
+    }
+
+  }
+}

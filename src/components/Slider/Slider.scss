@@ -1,0 +1,130 @@
+@import "../../styles/vars.scss";
+@import "../../styles/mixins.scss";
+
+.slider {
+  position: relative;
+  overflow: hidden;
+
+  &__button {
+    position: absolute;
+    top: 45%; /* Центрирование кнопок */
+    transform: translateY(-50%);
+    width: 57px;
+    height: 57px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 100;
+
+    @include mobile {
+      display: none;
+    }
+
+    &--prev {
+      @include mobile {
+        left: 20px; // Увеличиваем боковые отступы
+      }
+    
+      @include tablet {
+        left: calc((100vw - 768px) / 2);
+      }
+    
+      @include desktop {
+        left: 280px;
+      }
+    
+      @include wide {
+        left: 280px;
+      }
+    
+      @include superWide {
+        left: 280px;
+      }
+
+      background-image: url('../../../public/images/icons/prev-button.svg');
+    }
+
+    &--next {
+      @include mobile {
+        right: 20px; // Увеличиваем боковые отступы
+      }
+    
+      @include tablet {
+        right: calc((100vw - 768px) / 2);
+      }
+    
+      @include desktop {
+        right: calc((100vw - 990px) / 2);
+      }
+    
+      @include wide {
+        right: calc((100vw - 1200px) / 2);
+      }
+    
+      @include superWide {
+        right: calc((100vw - 1570px) / 2);
+      }
+
+      background-image: url('../../../public/images/icons/next-button.svg');
+    }
+  }
+
+  .swiper {
+    overflow: visible;
+
+    &-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: visible;
+      transition: transform 0.3s ease, z-index 0.3s ease;
+
+      &-active {
+        transform: scale(1.05) !important;
+        z-index: 10 !important;
+      }
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-pagination {
+      position: static;
+      margin-top: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+
+      &-bullet {
+        width: 6px;
+        height: 6px;
+
+        @include mobile {
+          width: 4px;
+          height: 4px;
+        }
+
+        background-color: $small-text-color;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+
+        &-active {
+          width: 12px;
+          height: 12px;
+
+          @include mobile {
+            width: 8px;
+            height: 8px;
+          }
+          background-color: $project-orange;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@import '../../styles/mixins.scss';
+
+.recommendations {
+  height: 2364px; // !!!! хардкодинг
+  background-image: url('../../../public/images/main-photo/Recommendations-main.svg');
+  background-position: center;
+  background-size: cover;
+  /* Растягиваем фон, чтобы он заполнил весь контейнер */
+  background-position: center;
+  /* Центруем изображение фона */
+  background-repeat: no-repeat;
+  object-fit: cover;
+
+  @include mobile {
+    background-image: none;
+    color: #fff;
+    height: auto;
+  }
+
+  background-color: #000;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    justify-content: end;
+    align-items: end;
+
+  }
+
+  &__circle-normal {
+    display: block;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__circle-mobile {
+    display: none;
+    margin-top: 100px;
+    align-self: center;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 525px;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__img-container {
+    position: relative; // Контейнер для позиционирования изображения
+    width: 100vw; // Занимает всю ширину экрана
+    height: 100vh; // Занимает всю высоту экрана
+    margin-left: -20px;
+    margin-top: 150px;
+    overflow: hidden; // Скрываем все выходящие за границы части
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__img {
+    position: absolute; // Абсолютное позиционирование внутри контейнера
+    top: 0; // Привязываем к верхнему краю
+    left: 0; // Привязываем к левому краю
+    width: 100%; // Растягиваем по ширине
+    height: 100%; // Растягиваем по высоте контейнера
+    object-fit: cover; // Обрезаем края, чтобы заполнить контейнер
+  }
+
+  &__img {
+    @include mobile {
+      display: block; // Отображаем элемент на мобильных
+    }
+  }
+}

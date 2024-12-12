@@ -1,0 +1,42 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+
+.certificates {
+  background-color: $background-gray;
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    text-align: left;
+    color: $dark-gray;
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    width: 525px;
+    color: $dark-gray;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__slider {
+    margin-top: 100px;
+
+    @include mobile {
+      margin-top: 60px;
+    }
+  }
+}

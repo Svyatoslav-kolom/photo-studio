@@ -1,0 +1,108 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+
+.pricing-card {
+  color: $project-white;
+  border-radius: 30px;
+  box-sizing: border-box;
+  padding: 45px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: $card-background;
+
+  width: 32%;
+
+  @include mobile {
+    width: 100%;
+    padding: 50px 22px;
+    align-items: flex-start;
+  }
+
+  @include tablet {
+    width: 100%;
+    align-items: flex-start;
+    padding: 50px
+  }
+
+  @include desktop {
+    padding: 20px
+  }
+
+  @include wide {
+    padding: 30px
+  }
+
+  &__title {
+    color: $project-orange;
+    margin-bottom: 16px;
+    font-weight: 100;
+    align-self: flex-start;
+  }
+
+  &__price-wrapper {
+    align-self: flex-start;
+  }
+
+  &__price {
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-size: 56px;
+    font-weight: 100;
+
+    @include desktop {
+      font-size: 32px;
+    }
+  }
+
+  &__details {
+    color: $project-white;
+    margin-bottom: 20px;
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+
+  &__additional-services {
+    margin-top: 40px;
+    margin-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+
+    h4 {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__button {
+    background-color: $project-orange;
+    border: none;
+    border-radius: 15px;
+    color: $project-white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: #c04a00;
+    }
+  }
+
+  &__icon {
+    color: $project-orange;
+  }
+}

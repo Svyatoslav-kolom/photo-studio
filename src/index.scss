@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "swiper/css";
+@import "swiper/css/pagination";
+@import "./styles/mixins.scss";
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  margin: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-inline: 10px; // Отступы по бокам по умолчанию
+  margin: 0;
+  overflow: visible;
+
+  @include mobile {
+    padding-inline: 20px;
+  }
+
+  @include tablet {
+    max-width: 768px;
+    padding-inline: calc((100% - 768px) / 2);
+    padding-left: 280px;
+  }
+
+  @include desktop {
+    max-width: 990px;
+    padding-inline: calc((100% - 990px) / 2);
+    padding-left: 280px;
+  }
+
+  @include wide {
+    max-width: 1200px;
+    padding-inline: calc((100% - 1200px) / 2);
+    padding-left: 280px;
+  }
+
+  @include superWide {
+    max-width: 1570px;
+    padding-inline: calc((100% - 1570px) / 2);
+    padding-left: 280px;
+  }
+}

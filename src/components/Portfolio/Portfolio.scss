@@ -1,0 +1,42 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+
+.portfolio {
+  background-color: $background-black;
+
+  padding-bottom: 100px; //Важно
+  
+  &__title {
+    background-color: $title-gradient;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 525px;
+      padding-top: 12px;
+      color: $project-white;
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+
+  &__slider {
+    margin-top: 100px;
+    // width: 100vw;
+  }
+}

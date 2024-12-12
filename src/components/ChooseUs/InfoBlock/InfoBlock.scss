@@ -1,0 +1,90 @@
+@import '../../../styles/vars.scss';
+@import '../../../styles/mixins.scss';
+
+.info-block {
+  background-color: $info-block-background;
+  border-radius: 30px;
+  padding: 30px;
+  color: $project-white;
+  box-sizing: border-box;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  width: 49%;
+
+  @include mobile {
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  @include tablet {
+    gap: 20px;
+    width: 100%;
+    padding: 20px 30px;
+  }
+  
+  @include desktop {
+    gap: 40px;
+    width: 100%;
+    padding: 20px 40px;
+  }
+  
+  @include wide {
+    padding: 20px 40px;
+    gap: 20px;
+  }
+
+  &__top {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    /* Центрируем элементы по вертикали */
+
+    @include mobile {
+      justify-content: space-between;
+    }
+
+    @include tablet {
+      gap: 20px;
+    }
+    
+    @include desktop {
+      gap: 30px;
+    }
+  
+    @include wide {
+      gap: 20px;
+      width: 100%;
+      padding: 20px;
+    }
+  }
+
+  &__img {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    @include mobile {
+      width: 76px;
+      height: 76px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    flex-shrink: 1;
+    line-height: normal;
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+    }
+  }
+}

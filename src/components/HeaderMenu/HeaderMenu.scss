@@ -1,0 +1,67 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+
+.header-menu {
+  width: 210px;
+  padding: 13px 35px 35px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  height: 90vh;
+  z-index: 3000; 
+
+  mix-blend-mode: difference;
+
+
+  &__icon-wrapper {
+    height: 194px;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__list {
+    margin: 0;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: start;
+  list-style-type: none;
+  padding: 0;
+
+  &__item {
+    font-size: 24px;
+    font-weight: 200;
+    line-height: 30.65px;
+    text-align: left;
+    text-decoration: none;
+    color: $project-white;
+  }
+}
+
+.social-media {
+  display: flex;
+  gap: 12px;
+  margin-top: 40px;
+
+  &__icon {
+    width: 36px;
+    height: 36px;
+    display: block;
+    background-size: cover;
+  }
+
+  &__instagram {
+    background-image: url('../../../public/images/icons/Instagram.svg');
+  }
+
+  &__telegram {
+    background-image: url('../../../public/images/icons/Telegram.svg');
+  }
+}

@@ -1,0 +1,31 @@
+@import './styles/mixins.scss';
+
+.App {
+  z-index: 1000;
+
+  @include mobile {
+    .App__menu {
+      display: none;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 44px;
+    left: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+    mix-blend-mode: difference;
+
+    &--normal {
+      mix-blend-mode: normal;
+      color: #000;
+    }
+
+    &--hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none; // Исключает меню из кликабельной области
+    }
+  }
+}

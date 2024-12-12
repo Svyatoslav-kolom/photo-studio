@@ -1,0 +1,60 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+
+.header-mobile {
+  background-image: url('../../../public/images/header-top/header-mobile.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 15px;
+  border: none;
+
+  background-color: #000;
+
+  @include mobile {
+    padding-inline: 20px; // Увеличиваем боковые отступы
+  }
+
+  &__logo {
+    width: 83px;
+    height: 49px;
+  }
+
+  &__title {
+    margin-top: 22px;
+    margin-bottom: 30px;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu {
+    background-image: url('../../../public/images/icons/burger-menu.svg');
+    width: 36px;
+    height: 16px;
+    display: block;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__close {
+    background-image: url('../../../public/images/icons/cross.svg');
+    width: 24px;
+    height: 24px;
+    display: block;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__camera {
+    width: 100%;
+  }
+}

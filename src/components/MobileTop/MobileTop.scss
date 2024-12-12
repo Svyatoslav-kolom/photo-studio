@@ -1,0 +1,30 @@
+.header-mobile {
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu {
+    background-image: url('../../../public/images/icons/burger-menu.svg');
+    width: 36px;
+    height: 16px;
+    display: block;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__close {
+    background-image: url('../../../public/images/icons/cross.svg');
+    width: 24px;
+    height: 24px;
+    display: block;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

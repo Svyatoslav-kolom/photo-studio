@@ -1,0 +1,78 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+
+.guarantee {
+  background-image: url('../../../public/images/header-top/header-top-Background2.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 150vh;
+  background-color: $background-black;
+  color: $project-white;
+  text-align: left;
+  font-weight: 100;
+
+  @include mobile {
+    height: 100%;
+    background-position: top;
+    background-size:unset;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+
+  &__content {
+    width: 524px;
+    margin-left: auto;
+    padding-top: 243px;
+
+    @include mobile {
+      margin-top: 700px;
+      width: 100%;
+    }
+  }
+
+  &__list {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+    /* Убираем стандартные маркеры */
+    padding: 0;
+    /* Убираем отступы списка */
+
+    &__item {
+      position: relative;
+      padding-left: 12px;
+      /* Отступ для размещения точки */
+
+      &::before {
+        content: "•";
+        /* Символ точки */
+        position: absolute;
+        left: 0;
+        /* Ставим точку слева */
+        color: $project-white;
+        /* Цвет точки */
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__circle {
+    display: flex;
+    justify-content: end;
+    @include mobile {
+      justify-content: center;
+    }
+    margin-top: 100px;
+  }
+}
