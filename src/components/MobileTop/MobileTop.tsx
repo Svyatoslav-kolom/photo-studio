@@ -2,20 +2,32 @@
 // src/components/HeaderMobileTop.tsx
 import React from 'react';
 import './MobileTop.scss';
+import { animateScroll as scroll } from "react-scroll";
 
 interface MobileTopProps {
   isMenuOpen: boolean;
   toggleMenu: () => void;
+  onClose?: () => void;
 }
 
-export const MobileTop: React.FC<MobileTopProps> = ({ isMenuOpen, toggleMenu }) => {
+export const MobileTop: React.FC<MobileTopProps> = ({ isMenuOpen, toggleMenu, onClose }) => {
   return (
     <div className="header-mobile__top">
-      <img
-        src="images/header-top/header-top-menu-On-Photo.svg"
-        alt="On-Photo"
+      <button
+        onClick={() => {
+          scroll.scrollToTop();
+          if (isMenuOpen && onClose) {
+            onClose();
+          }
+        }}
         className="header-mobile__logo"
-      />
+      >
+        <img
+          src="images/header-top/header-top-menu-On-Photo.svg"
+          alt="On-Photo"
+          className="header-mobile__logo"
+        />
+      </button>
 
       <a
         href="#menu"

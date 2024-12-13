@@ -18,13 +18,23 @@
     gap: 50px;
   }
 
+  &__error {
+    color: #f02a2a;
+  }
+
   &__field {
     display: flex;
     flex-direction: column;
     gap: 10px;
 
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
     @include mobile {
-      flex-direction: row;
+      flex-direction: column;
     }
 
     @include tablet {
@@ -37,7 +47,7 @@
     border: none;
     border-radius: 8px;
     border-bottom: 1px solid $dark-gray;
-    height: 30px;
+    min-height: 30px;
     width: 100%;
     max-width: 500px;
     background-color: rgba(0, 0, 0, 0);

@@ -66,7 +66,7 @@ export const Form = () => {
           />
         </div>
 
-        <div className="form__field">
+        <div className="form__field form__field__container">
           <input
             type="tel"
             id="phone"
@@ -75,8 +75,9 @@ export const Form = () => {
             value={phone}
             onChange={handlePhoneChange}
           />
+
           {!isPhoneValid && phone.trim() !== '' && (
-            <div className="form__error">
+            <div className="form__error small-text">
               Неверный формат телефона
             </div>
           )}

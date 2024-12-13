@@ -17,6 +17,11 @@
     background-size: cover;
   }
 
+  &__logo {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+  }
+
   &__close {
     background-image: url('../../../public/images/icons/cross.svg');
     width: 24px;

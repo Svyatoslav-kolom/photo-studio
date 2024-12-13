@@ -33,7 +33,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       onClick={handleBackdropClick}
     >
       <div className="mobile-menu__content">
-        <MobileTop isMenuOpen={isOpen} toggleMenu={onClose} />
+        <MobileTop isMenuOpen={isOpen} toggleMenu={onClose} onClose={onClose} />
         <div className="mobile-menu__menu">
           <HeaderMenu onClose={onClose} />
         </div>
