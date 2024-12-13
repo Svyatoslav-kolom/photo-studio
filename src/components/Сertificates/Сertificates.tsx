@@ -1,6 +1,5 @@
-
 import './Сertificates.scss';
-
+import { Element } from 'react-scroll';
 import { СertificatesSlider } from './СertificatesSlider';
 
 const certificates = [
@@ -11,7 +10,7 @@ const certificates = [
 
 export const Certificates = () => {
   return (
-    <div className="certificates container">
+    <Element name='certificat' className="certificates container">
       <div className="certificates__top">
         <h1 className="certificates__title title">
           Ищете идеальный подарок?
@@ -29,6 +28,6 @@ export const Certificates = () => {
         <СertificatesSlider images={certificates} />
       </div>
 
-    </div>
+    </Element>
   );
 };

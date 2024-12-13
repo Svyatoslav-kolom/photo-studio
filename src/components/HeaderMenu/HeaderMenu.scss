@@ -16,6 +16,9 @@
 
   &__icon-wrapper {
     height: 194px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
 
     @include mobile {
       display: none;
@@ -35,6 +38,10 @@
   list-style-type: none;
   padding: 0;
 
+  & > :last-child {
+    margin: 0 !important;
+  }
+
   &__item {
     font-size: 24px;
     font-weight: 200;
@@ -42,6 +49,7 @@
     text-align: left;
     text-decoration: none;
     color: $project-white;
+    cursor: pointer;
   }
 }
 
@@ -49,6 +57,10 @@
   display: flex;
   gap: 12px;
   margin-top: 40px;
+
+  @include mobile {
+    margin-top: 133px !important;
+  }
 
   &__icon {
     width: 36px;

@@ -1,18 +1,11 @@
 import { Form } from "../Form";
+import { Link, animateScroll as scroll, Element } from 'react-scroll';
+import { menuList } from '../HeaderMenu/MenuList';
 import "./Footer.scss";
 
 export const Footer = () => {
-  const menuItems = [
-    { name: "Home", link: "#" },
-    { name: "About", link: "#" },
-    { name: "Portfolio", link: "#" },
-    { name: "Price", link: "#" },
-    { name: "Gift Certificate", link: "#" },
-    { name: "Contact Us", link: "#" }
-  ];
-
   return (
-    <div className="footer container">
+    <Element name="contact" className="footer container">
       <div className="footer__content">
 
         <div className="footer__content__top">
@@ -45,16 +38,36 @@ export const Footer = () => {
       <div className="footer__bottom">
         <nav>
           <ul className="footer__list">
-            {menuItems.map((item, index) => (
-              <li key={index} className="footer__list__item">
-                <a href={item.link} className="footer__link">{item.name}</a><p>/</p>
 
+            <li key={0} className="footer__list__item">
+              <button
+                onClick={() => scroll.scrollToTop()}
+                className="footer__link footer__home"
+              >
+                Home
+              </button>
+
+              <p>/</p>
+            </li>
+
+            {menuList.map((item, index) => (
+              <li key={index} className="footer__list__item">
+                <Link
+                  to={item.link}
+                  smooth={true}
+                  duration={500}
+                  className="footer__link"
+                >
+                  {item.name}
+                </Link>
+
+                <p>/</p>
               </li>
             ))}
           </ul>
         </nav>
         <p>2024 - Copyright All Right Reserved</p>
       </div>
-    </div>
+    </Element>
   );
 };

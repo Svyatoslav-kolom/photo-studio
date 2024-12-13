@@ -12,6 +12,7 @@
   flex-direction: column;
   gap: 46px;
   width: 49%;
+  min-height: 320px;
 
   @include mobile {
     gap: 20px;

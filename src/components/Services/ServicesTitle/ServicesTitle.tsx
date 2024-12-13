@@ -1,4 +1,5 @@
 import './ServicesTitle.scss';
+import { Link } from 'react-scroll';
 
 export const ServicesTitle = () => {
   return (
@@ -15,7 +16,12 @@ export const ServicesTitle = () => {
 
         <div className="services-title__details">
           Подробнее
-          <button className='details-button' />
+          <Link
+            to='price'
+            smooth={true}
+            duration={500}
+            className='details-button'
+          ></Link>
         </div>
       </div>
 

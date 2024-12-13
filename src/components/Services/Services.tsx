@@ -2,10 +2,11 @@ import './Services.scss';
 import { ServicesBottom } from './ServicesBottom/ServicesBottom';
 import { ServicesInfo } from './ServicesInfo';
 import { ServicesTitle } from './ServicesTitle';
+import { Element } from 'react-scroll';
 
 export const Services = () => {
   return (
-    <div className="services container">
+    <Element name='services' className="services container">
       <div className="services__services-title">
         <ServicesTitle />
       </div>
@@ -26,6 +27,6 @@ export const Services = () => {
       <div className="services__services-bottom">
         <ServicesBottom />
       </div>
-    </div>
+    </Element>
   )
 }

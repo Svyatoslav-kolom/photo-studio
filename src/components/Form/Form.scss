@@ -33,6 +33,7 @@
   }
 
   &__input {
+    // Ваши текущие стили
     border: none;
     border-radius: 8px;
     border-bottom: 1px solid $dark-gray;
@@ -44,22 +45,28 @@
     font-weight: 400;
     line-height: 30.65px;
     text-align: left;
-
     padding: 0 15px;
-
     transition: all 0.3s ease;
-
+  
     @include mobile {
       font-size: 12px;
       line-height: 15.32px;
       padding: 0 6px;
     }
-
+  
     &:focus {
       outline: none;
       border-color: $primary-color; // Цвет рамки при фокусе
     }
+  
+    // Убираем стили автозаполнения
+    &:-webkit-autofill {
+      box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset; // Задает прозрачный фон
+      -webkit-text-fill-color: inherit; // Использует цвет текста из стилей инпута
+      transition: background-color 5000s ease-in-out 0s;
+    }
   }
+  
 
   &__button {
     align-self: flex-end;

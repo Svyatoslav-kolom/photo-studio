@@ -2,10 +2,11 @@ import PricingCard from "../PricingCard/PricingCard";
 import './Price.scss';
 import { cardsData } from "./cardData";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Element } from 'react-scroll';
 
 export const Price = () => {
   return (
-    <div className="price container">
+    <Element name="price" className="price container">
       <div className="price__top">
         <h1 className="price__title title header-title">цены</h1>
         <div className="text price__text">
@@ -34,6 +35,6 @@ export const Price = () => {
           ))}
         </Swiper>
       </div>
-    </div>
+    </Element>
   );
 };

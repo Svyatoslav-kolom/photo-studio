@@ -4,10 +4,10 @@ interface MenuItem {
 }
 
 export const menuList: MenuItem[] = [
-  { name: 'О НАС', link: '/about' },
-  { name: 'УСЛУГИ', link: '/services' },
-  { name: 'ПОРТФОЛИО', link: '/portfolio' },
-  { name: 'ЦЕНЫ', link: '/price' },
-  { name: 'СЕРТИФИКАТ', link: '/sertificat' },
-  { name: 'КОНТАКТЫ', link: '/contact' }
+  { name: 'О НАС', link: 'about' },
+  { name: 'УСЛУГИ', link: 'services' },
+  { name: 'ПОРТФОЛИО', link: 'portfolio' },
+  { name: 'ЦЕНЫ', link: 'price' },
+  { name: 'СЕРТИФИКАТ', link: 'certificat' },
+  { name: 'КОНТАКТЫ', link: 'contact' }
 ];

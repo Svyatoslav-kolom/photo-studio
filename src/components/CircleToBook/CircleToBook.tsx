@@ -1,5 +1,6 @@
 import './CircleToBook.scss';
 import { IconsColors } from '../../utils/types/icons-colors';
+import { Link } from 'react-scroll';
 
 type Props = {
   color: IconsColors;
@@ -12,11 +13,17 @@ export const CircleToBook: React.FC<Props> = ({ color }) => {
   };
 
   return (
-    <div className="circle" style={circleStyles}>
+    <Link
+      to='contact'
+      smooth={true}
+      duration={500}
+      className="circle"
+      style={circleStyles}
+    >
       <div className="circle__content">
         <img src={`images/oreder-a-shoot/${color}/camera-icon.svg`} alt="camera" />
         <img src={`images/oreder-a-shoot/${color}/order-inscription.svg`} alt="inscription" />
       </div>
-    </div>
+    </Link>
   );
 };

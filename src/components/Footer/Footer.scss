@@ -8,6 +8,12 @@
 
   padding-top: 72px;
 
+  &__home {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+  }
+
 
   &__content {
     display: flex;
@@ -132,6 +138,8 @@
       /* Чтобы текст и разделитель были на одной линии */
       align-items: center;
       /* Вертикальное выравнивание по центру */
+
+      cursor: pointer;
 
       @include mobile {
         margin-bottom: 18px;
