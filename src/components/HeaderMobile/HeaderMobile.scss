@@ -17,7 +17,7 @@
 }
 
 .header-mobile {
-  background-image: url('../../../public/images/header-top/header-mobile.svg');
+  background-image: url('../../../public/images/header/header-background--mobile.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -106,6 +106,6 @@
   }
 
   &__camera {
-    width: 100%;
+    width: 80%;
   }
 }

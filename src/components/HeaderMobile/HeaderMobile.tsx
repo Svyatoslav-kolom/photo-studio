@@ -19,7 +19,7 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({ isMenuOpen, toggleMe
         фото и видеосъемка
       </h1>
 
-      <img src="images/header-top/TEXT (1).svg" alt="" />
+      <img className='header-mobile__camera' src="images/header/header-camera-mobile.svg" alt="" />
     </div>
   );
 };

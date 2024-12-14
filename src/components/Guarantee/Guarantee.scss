@@ -2,7 +2,11 @@
 @import '../../styles/mixins.scss';
 
 .guarantee {
-  background-image: url('../../../public/images/header-top/header-top-Background2.svg');
+  background-image: url('../../../public/images/guarantee/guarantee-Background.svg');
+  @include mobile {
+    background-image: url('../../../public/images/guarantee/guarantee-Background--mobile.svg');
+  }
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -16,9 +20,7 @@
   @include mobile {
     height: 100%;
     background-position: top;
-    // background-size:unset;
-
-    background-size: 220%;
+    background-size: 100%;
   }
 
   &__title {

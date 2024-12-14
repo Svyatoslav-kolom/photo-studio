@@ -23,7 +23,7 @@ export const MobileTop: React.FC<MobileTopProps> = ({ isMenuOpen, toggleMenu, on
         className="header-mobile__logo"
       >
         <img
-          src="images/header-top/header-top-menu-On-Photo.svg"
+          src="images/icons/on-photo.svg"
           alt="On-Photo"
           className="header-mobile__logo"
         />

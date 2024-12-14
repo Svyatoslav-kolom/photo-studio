@@ -2,7 +2,8 @@
 
 .recommendations {
   height: 2364px; // !!!! хардкодинг
-  background-image: url('../../../public/images/main-photo/Recommendations-main.svg');
+  background-image: url('../../../public/images/recomendations/recommendations-background.svg');
+
   background-position: center;
   background-size: cover;
   /* Растягиваем фон, чтобы он заполнил весь контейнер */
@@ -10,7 +11,7 @@
   /* Центруем изображение фона */
   background-repeat: no-repeat;
   object-fit: cover;
-
+  
   @include mobile {
     background-image: none;
     color: #fff;

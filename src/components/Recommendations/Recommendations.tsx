@@ -26,7 +26,7 @@ export const Recommendations = React.forwardRef<HTMLDivElement>((props, ref) => 
       <div className="recommendations__img-container">
         <img
           className="recommendations__img"
-          src="images/main-photo/Recommendations-main.svg"
+          src="/images/recomendations/recommendations-background.svg"
           alt="Recommendations"
         />
       </div>

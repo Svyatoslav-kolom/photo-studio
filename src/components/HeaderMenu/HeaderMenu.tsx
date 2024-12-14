@@ -18,7 +18,7 @@ export const HeaderMenu: React.FC<HeaderMenuProps> = ({ onClose }) => {
     <div className="header-menu">
       <button onClick={() => scroll.scrollToTop()} className="header-menu__icon-wrapper">
         <img
-          src="images/header-top/header-top-menu-On-Photo.svg"
+          src="images/icons/on-photo.svg"
           alt="On-Photo"
         />
       </button>

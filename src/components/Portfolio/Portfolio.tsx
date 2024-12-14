@@ -2,9 +2,9 @@ import { Slider } from '../Slider/Slider';
 import './Portfolio.scss';
 
 const images = [
-  'images/portfolio-images/portfolio-image-1.svg',
-  'images/portfolio-images/portfolio-image-2.svg',
-  'images/portfolio-images/portfolio-image-3.svg',
+  'images/portfolio/desktop/portfolio-image-1.svg',
+  'images/portfolio/desktop/portfolio-image-2.svg',
+  'images/portfolio/desktop/portfolio-image-3.svg',
 ];
 
 export const Portfolio = () => {

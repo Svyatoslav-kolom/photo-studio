@@ -8,7 +8,7 @@ export const Header = () => {
         фото и видеосъемка
       </h1>
       <img
-        src="images/header-top/header-camera.svg"
+        src="images/header/header-camera.svg"
         alt=""
         className="header-top__camera"
       />
