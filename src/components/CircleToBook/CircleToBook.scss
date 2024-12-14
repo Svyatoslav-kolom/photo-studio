@@ -2,8 +2,8 @@
 @import '../../styles/mixins.scss';
 
 .circle {
-  // height: 300px;
-  // width: 300px;
+  height: 300px;
+  width: 300px;
   border-radius: 50%;
   backdrop-filter: blur(8px);
   display: block;

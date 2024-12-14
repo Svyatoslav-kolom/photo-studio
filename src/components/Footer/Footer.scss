@@ -122,18 +122,17 @@
   &__bottom {
     padding-top: 50px;
     border-top: 1px solid #000;
-    margin-top: 250px;
 
     @include mobile {
       margin-top: 50px;
     }
 
     @include tablet {
-      margin-top: 90px;
+      margin-top: 50px;
     }
 
     @include desktop {
-      margin-top: 120px;
+      margin-top: 50px;
     }
   }
 
