@@ -7,24 +7,34 @@ import { Services } from './components/Services';
 import { Portfolio } from './components/Portfolio';
 import { Recommendations } from './components/Recommendations';
 import { Price } from './components/Price';
-import { Certificates } from './components/Сertificates';
+import { Certificates } from './components/\u0421ertificates';
 import { Footer } from './components/Footer';
 import { HeaderMenu } from './components/HeaderMenu';
 import { useNormalModeObserver } from './App-menu-logic';
 import { MobileMenu } from './components/MobileMenu';
 import { Header } from './components/Header';
-import './styles/titles.scss'
+import { Loader } from './components/Loader';
+import './styles/titles.scss';
 
 function App() {
   const recommendationsRef = useRef<HTMLDivElement>(null);
   const isNormalMode = useNormalModeObserver(recommendationsRef);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false); // Загрузчик будет работать только на телефоне
 
   // Определение мобильного режима
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 767.98);
+      const isMobileView = window.innerWidth <= 767.98;
+      setIsMobile(isMobileView);
+
+      // Показывать загрузчик только при первом входе в мобильный режим
+      if (isMobileView) {
+        setIsLoading(true);
+        const timer = setTimeout(() => setIsLoading(false), 3000); // Скрыть через 3 секунды
+        return () => clearTimeout(timer);
+      }
     };
 
     handleResize(); // Установить начальное значение
@@ -58,39 +68,46 @@ function App() {
   // Функция для закрытия меню (сброс хэша)
   const closeMenu = () => {
     setIsMenuOpen(false);
-    window.history.pushState('', document.title, window.location.pathname); // Убираем #menu из URL
+    window.history.pushState('', document.title, window.location.pathname);
   };
 
   return (
     <div className="App">
-      <header className="App__header">
-        {isMobile ?
+      {isMobile && isLoading && <Loader />}
+      <header className={`App__header ${isLoading ? 'App__header--loading' : ''}`}>
+        {isMobile ? (
           <HeaderMobile isMenuOpen={isMenuOpen} toggleMenu={() => setIsMenuOpen(!isMenuOpen)} />
-          :
+        ) : (
           <Header />
-        }
-
+        )}
         <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />
-
       </header>
 
-      <div className={`App__menu ${isNormalMode ? 'App__menu--normal' : ''}`}>
+      <div
+        className={`App__menu ${isNormalMode ? 'App__menu--normal' : ''} ${
+          isLoading ? 'App__menu--loading' : ''
+        }`}
+      >
         <HeaderMenu />
       </div>
 
-      <main>
-        <ChooseUs />
-        <Guarantee />
-        <Services />
-        <Portfolio />
-        <Recommendations ref={recommendationsRef} />
-        <Price />
-        <Certificates />
-      </main>
+      {!isLoading && (
+        <main>
+          <ChooseUs />
+          <Guarantee />
+          <Services />
+          <Portfolio />
+          <Recommendations ref={recommendationsRef} />
+          <Price />
+          <Certificates />
+        </main>
+      )}
 
-      <footer className="App__footer">
-        <Footer />
-      </footer>
+      {!isLoading && (
+        <footer className="App__footer">
+          <Footer />
+        </footer>
+      )}
     </div>
   );
 }

@@ -1,0 +1,76 @@
+.loader {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #000; // Черный фон для эффекта камеры
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 99999;
+
+  &__frame {
+    position: absolute;
+    width: 80%;
+    height: 60%;
+    border: 4px solid #fff;
+    z-index: 10; // Рамка всегда сверху
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    animation: move-logo 3s cubic-bezier(0.4, 0.0, 0.2, 1) forwards; // Плавное движение
+    z-index: 5;
+
+    img {
+      width: 150px;
+      height: auto;
+    }
+  }
+
+  &__flash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: 0;
+    z-index: 20;
+    animation: flash 0.5s ease-in-out 3s forwards;
+  }
+}
+
+// Анимация движения логотипа
+@keyframes move-logo {
+  0% {
+    transform: translateY(100%); // Начинаем за пределами экрана
+  }
+  100% {
+    transform: translateY(0); // Останавливаемся в центре экрана
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0; // Начальная прозрачность
+  }
+  25% {
+    opacity: 1; // Максимальная яркость вспышки
+  }
+  50% {
+    opacity: 0.5; // Плавное угасание
+  }
+  100% {
+    opacity: 0; // Полное исчезновение
+  }
+}
