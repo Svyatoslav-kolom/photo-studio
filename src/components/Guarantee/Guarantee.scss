@@ -2,10 +2,16 @@
 @import '../../styles/mixins.scss';
 
 .guarantee {
-  background-image: url('../../../public/images/guarantee/guarantee-Background.svg');
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0) 90%, $background-black 97%), // Градиент сверху
+    url('../../../public/images/guarantee/guarantee-Background.svg'),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 68%, $background-black 97%); // Градиент снизу
 
   @include mobile {
-    background-image: url('../../../public/images/guarantee/guarantee-Background--mobile.png');
+    background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0) 90%, $background-black 97%),
+      url('../../../public/images/guarantee/guarantee-Background--mobile.png'),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0) 90%, $background-black 97%);
   }
 
   background-position: center;
@@ -76,9 +82,11 @@
   &__circle {
     display: flex;
     justify-content: end;
+
     @include mobile {
       justify-content: center;
     }
+
     margin-top: 100px;
   }
 }

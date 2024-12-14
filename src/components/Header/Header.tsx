@@ -7,11 +7,15 @@ export const Header = () => {
         Профессиональная <br />
         фото и видеосъемка
       </h1>
-      <img
-        src="images/header/header-camera.svg"
-        alt=""
-        className="header-top__camera"
-      />
+
+      <div className="header-top__camera-wrapper">
+        <img
+          src="images/header/header-camera.svg"
+          alt=""
+          className="header-top__camera"
+        />
+      </div>
+      
       <div className="comment small-text">
         на фото: <br />
         Фотограф студии Оксана Гафарова
