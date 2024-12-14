@@ -21,20 +21,15 @@ function App() {
   const isNormalMode = useNormalModeObserver(recommendationsRef);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(false); // Загрузчик будет работать только на телефоне
+  const [isLoading, setIsLoading] = useState<boolean>(() => {
+    return !localStorage.getItem('loaderSeen');
+  });
 
   // Определение мобильного режима
   useEffect(() => {
     const handleResize = () => {
       const isMobileView = window.innerWidth <= 767.98;
       setIsMobile(isMobileView);
-
-      // Показывать загрузчик только при первом входе в мобильный режим
-      if (isMobileView) {
-        setIsLoading(true);
-        const timer = setTimeout(() => setIsLoading(false), 3000); // Скрыть через 3 секунды
-        return () => clearTimeout(timer);
-      }
     };
 
     handleResize(); // Установить начальное значение
@@ -44,6 +39,23 @@ function App() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  // Логика работы лоадера
+  useEffect(() => {
+    if (isLoading) {
+      // Блокируем скролл при отображении лоадера
+      document.body.style.overflow = 'hidden';
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+        localStorage.setItem('loaderSeen', 'true'); // Помечаем, что лоадер больше не нужен
+      }, 3000); // Лоадер исчезает через 3 секунды
+
+      return () => clearTimeout(timer);
+    } else {
+      // Возвращаем скролл после закрытия лоадера
+      document.body.style.overflow = '';
+    }
+  }, [isLoading]);
 
   // Логика для открытия/закрытия меню
   useEffect(() => {
