@@ -12,6 +12,7 @@
     background-color: rgba(0, 0, 0, 0);
     border: none;
     cursor: pointer;
+    padding: 0;
   }
 
 
@@ -106,11 +107,11 @@
     margin-top: 20px;
 
     @include mobile {
-      margin-top: 140px;
+      margin-top: 50px;
     }
 
     @include tablet {
-      margin-top: 140px;
+      margin-top: 50px;
     }
 
     @include desktop {
@@ -119,9 +120,21 @@
   }
 
   &__bottom {
-    margin-top: 250px;
     padding-top: 50px;
     border-top: 1px solid #000;
+    margin-top: 250px;
+
+    @include mobile {
+      margin-top: 50px;
+    }
+
+    @include tablet {
+      margin-top: 90px;
+    }
+
+    @include desktop {
+      margin-top: 120px;
+    }
   }
 
   &__list {
@@ -152,11 +165,16 @@
 
       & p {
         margin: 0;
-        /* Убираем отступы */
-        margin-right: 15px;
-        /* Отступ справа между символом / и следующей ссылкой */
         color: inherit;
-        /* Используем текущий цвет текста */
+        margin-right: 15px;
+
+        @include mobile {
+          margin-right: 5px;
+        }
+
+        @include mobile {
+          margin-right: 10px;
+        }
       }
     }
   }
@@ -164,21 +182,27 @@
   &__link {
     text-decoration: none;
     color: $dark-gray;
-    margin-right: 15px;
     text-transform: uppercase;
-
     font-size: 12px;
     font-weight: 400;
     line-height: 12px;
+
+    @include mobile {
+      margin-right: 5px;
+    }
+
+    @include tablet {
+      margin-right: 10px;
+    }
   }
 
   &__contact {
     @include mobile {
-      margin-top: 133px;
+      margin-top: 60px;
     }
 
     @include tablet {
-      margin-top: 133px;
+      margin-top: 90px;
     }
 
     @include desktop {

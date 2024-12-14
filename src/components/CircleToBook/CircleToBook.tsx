@@ -21,8 +21,16 @@ export const CircleToBook: React.FC<Props> = ({ color }) => {
       style={circleStyles}
     >
       <div className="circle__content">
-        <img src={`images/oreder-a-shoot/${color}/camera-icon.svg`} alt="camera" />
-        <img src={`images/oreder-a-shoot/${color}/order-inscription.svg`} alt="inscription" />
+        <img
+          className="circle__camera"
+          src={`images/oreder-a-shoot/${color}/camera-icon.svg`}
+          alt="camera"
+        />
+        <img
+          className="circle__text"
+          src={`images/oreder-a-shoot/${color}/order-inscription.svg`}
+          alt="inscription"
+        />
       </div>
     </Link>
   );

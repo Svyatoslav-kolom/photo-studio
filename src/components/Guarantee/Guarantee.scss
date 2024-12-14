@@ -6,6 +6,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+
   height: 150vh;
   background-color: $background-black;
   color: $project-white;
@@ -15,7 +16,9 @@
   @include mobile {
     height: 100%;
     background-position: top;
-    background-size:unset;
+    // background-size:unset;
+
+    background-size: 220%;
   }
 
   &__title {
@@ -29,7 +32,7 @@
     padding-top: 243px;
 
     @include mobile {
-      margin-top: 700px;
+      margin-top: 250px;
       width: 100%;
     }
   }

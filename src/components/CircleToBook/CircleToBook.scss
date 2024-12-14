@@ -1,12 +1,47 @@
 @import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
 
 .circle {
-  height: 300px;
-  width: 300px;
+  // height: 300px;
+  // width: 300px;
   border-radius: 50%;
   backdrop-filter: blur(8px);
   display: block;
   cursor: pointer;
+
+  @include mobile {
+    height: 200px;
+    width: 200px;
+  }
+
+  @include tablet {
+    height: 200px;
+    width: 200px;
+  }
+
+  &__camera {
+    @include mobile {
+      width: 35px;
+      height: 35px;
+    }
+
+    @include tablet {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  &__text {
+    @include mobile {
+      width: 113px;
+      height: 65px;
+    }
+
+    @include tablet {
+      width: 113px;
+      height: 65px;
+    }
+  }
 
   &__content {
     display: flex;
@@ -16,5 +51,13 @@
     gap: 10px;
 
     margin-top: 87px;
+
+    @include mobile {
+      margin-top: 54px;
+    }
+
+    @include tablet {
+      margin-top: 54px;
+    }
   }
 }

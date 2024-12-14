@@ -50,11 +50,11 @@ export const ServicesInfo = () => {
         </h2>
 
         <nav>
-          <ul className="services-info__list">
+          <ul className="services-info__list services-info__list__photosession">
             {locations.map((item, index) => (
               <li
                 key={index}
-                className="text text--uppercase"
+                className="text text--uppercase services-info__item "
               >
                 {item.title}
               </li>

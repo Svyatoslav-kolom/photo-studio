@@ -8,6 +8,14 @@
     gap: 10px;
     list-style-type: none;
     padding: 0;
+
+    &__photosession {
+      @include mobile {
+        display: grid; // Используем grid для мобильных устройств
+        grid-template-columns: 1fr 1fr; // Две колонки с равной шириной
+        gap: 10px 20px; // Вертикальный и горизонтальный отступ
+      }
+    }
   }
 
   &__photo-tours {
