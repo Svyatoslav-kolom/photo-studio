@@ -3,8 +3,9 @@
 
 .guarantee {
   background-image: url('../../../public/images/guarantee/guarantee-Background.svg');
+
   @include mobile {
-    background-image: url('../../../public/images/guarantee/guarantee-Background--mobile.svg');
+    background-image: url('../../../public/images/guarantee/guarantee-Background--mobile.png');
   }
 
   background-position: center;
