@@ -35,7 +35,7 @@
   &__camera-wrapper {
     position: relative;
     align-self: center;
-    width: 80%;
+    width: 60%;
 
     &::after {
       content: "";
@@ -117,5 +117,7 @@
 
   &__camera {
     width: 100%;
+    transform: rotate(90deg); // Поворот на 90 градусов
+    transform-origin: center; // Указываем точку вращения
   }
 }

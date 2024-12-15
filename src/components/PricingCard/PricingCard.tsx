@@ -1,6 +1,7 @@
 import React from "react";
 import "./PricingCard.scss";
 import { PricingCardType } from "../../utils/types/PricingCardType";
+import { Link } from "react-scroll";
 
 const PricingCard: React.FC<PricingCardType> = ({
   title,
@@ -43,9 +44,14 @@ const PricingCard: React.FC<PricingCardType> = ({
         </ul>
       </div>
 
-      <button className="pricing-card__button medium-text">
+      <Link
+        to='contact'
+        smooth={true}
+        duration={500}
+        className='pricing-card__button medium-text'
+      >
         {buttonText}
-      </button>
+      </Link>
     </div>
   );
 };
