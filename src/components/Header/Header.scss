@@ -2,8 +2,8 @@
 @import '../../styles/mixins.scss';
 
 .header-top {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, $background-black 97%), // Узкий, четкий градиент
-  url('../../../public/images/header/header-background.svg'); // Ваш фон
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, $background-black 97%), 
+  url('../../../public/images/header/header-background.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,11 +12,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative; // Ensure positioning for the pseudo-element
+  position: relative;
 
   &__camera-wrapper {
     position: relative;
-  
+
     &::after {
       content: "";
       position: absolute;
@@ -26,8 +26,7 @@
       height: 100%;
       background: rgba(255, 255, 255, 0);
       opacity: 0;
-      animation: flash-glow 0.3s ease-in-out;
-      animation-delay: 2s; // Задержка начала анимации на 5 секунд
+      animation: flash-glow 5s ease-in-out infinite; // Полный цикл — 5 секунд
     }
   }
 }
@@ -35,15 +34,18 @@
 @keyframes flash-glow {
   0% {
     background: rgba(255, 255, 255, 0.8);
-    opacity: 0; // Початкова прозорість
+    opacity: 0;
   }
-  25% {
-    opacity: 1; // Максимальна яскравість блиму
+  1% {
+    opacity: 1; // Максимальная яркость
   }
-  50% {
-    opacity: 0.5; // Плавне згасання
+  3% {
+    opacity: 0.5; // Плавное угасание
+  }
+  5% {
+    opacity: 0; // Полное исчезновение
   }
   100% {
-    opacity: 0; // Повне зникнення
+    opacity: 0; // Сохраняется прозрачность до конца цикла
   }
 }

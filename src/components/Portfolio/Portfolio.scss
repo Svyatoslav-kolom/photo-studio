@@ -37,6 +37,7 @@
 
   &__slider {
     margin-top: 100px;
-    // width: 100vw;
+    overflow: hidden;
+    padding: 20px 0;
   }
 }

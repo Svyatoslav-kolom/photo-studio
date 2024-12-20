@@ -3,19 +3,20 @@
 
 @keyframes flash-glow {
   0% {
-    opacity: 0; // Начальная прозрачность
+    background: rgba(255, 255, 255, 0.8);
+    opacity: 0;
   }
-
-  25% {
-    opacity: 1; // Максимальная яркость вспышки
+  1% {
+    opacity: 1; // Максимальная яркость
   }
-
-  50% {
+  3% {
     opacity: 0.5; // Плавное угасание
   }
-
-  100% {
+  5% {
     opacity: 0; // Полное исчезновение
+  }
+  100% {
+    opacity: 0; // Сохраняется прозрачность до конца цикла
   }
 }
 
@@ -48,8 +49,7 @@
       height: 100%;
       background: rgba(255, 255, 255, 0);
       opacity: 0;
-      animation: flash-glow 0.3s ease-in-out;
-      animation-delay: 2s; // Задержка начала анимации на 5 секунд
+      animation: flash-glow 5s ease-in-out infinite; // Полный цикл — 5 секунд
     }
   }
 

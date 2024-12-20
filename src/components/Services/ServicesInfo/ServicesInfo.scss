@@ -11,9 +11,9 @@
 
     &__photosession {
       @include mobile {
-        display: grid; // Используем grid для мобильных устройств
-        grid-template-columns: 1fr 1fr; // Две колонки с равной шириной
-        gap: 10px 20px; // Вертикальный и горизонтальный отступ
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 20px;
       }
     }
   }
@@ -63,10 +63,9 @@
       }
     }
 
-    &>*:first-child {
+    & > *:first-child {
       border-right: 1px solid $background-black;
       padding-right: 45px;
-
 
       @include mobile {
         border-right: none;
@@ -79,12 +78,7 @@
     }
   }
 
-  &__outdor-photos {
-    padding-top: 20px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid $background-black;
-  }
-
+  &__outdor-photos,
   &__photo-tours {
     padding-top: 20px;
     padding-bottom: 30px;
@@ -116,13 +110,12 @@
 
   &__photo {
     display: none;
-    background-image: url('../../../../public/images/services/services-backgroung--mobile.svg');
     position: relative;
-
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom: 1px solid $background-black;
+    animation: changeBackground 5s infinite;
 
     @include mobile {
       display: block;
@@ -138,6 +131,21 @@
       position: absolute;
       bottom: 30px;
       left: 19px;
+    }
+  }
+
+  @keyframes changeBackground {
+    0% {
+      background-image: url('../../../../public/images/services/mobile/services-backgroung1--mobile.svg');
+    }
+    33% {
+      background-image: url('../../../../public/images/services/mobile/services-backgroung2--mobile.svg');
+    }
+    66% {
+      background-image: url('../../../../public/images/services/mobile/services-backgroung3--mobile.svg');
+    }
+    100% {
+      background-image: url('../../../../public/images/services/mobile/services-backgroung1--mobile.svg');
     }
   }
 }

@@ -31,7 +31,11 @@ const PricingCard: React.FC<PricingCardType> = ({
         <ul className="pricing-card__features">
           {features.map((feature, index) => (
             <li key={index} className="pricing-card__feature text">
-              <span className="pricing-card__icon">✓</span> {feature}
+              <div className="pricing-card__icon">
+                <img src="images/icons/check.svg" alt="pricing-card__icon" />
+              </div>
+              
+              {feature}
             </li>
           ))}
         </ul>
