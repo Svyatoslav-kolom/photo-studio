@@ -47,7 +47,7 @@
     /* Центрируем элементы по вертикали */
 
     @include mobile {
-      justify-content: space-between;
+      gap: 50px;
     }
 
     @include tablet {
@@ -83,6 +83,10 @@
     margin: 0;
     flex-shrink: 1;
     line-height: normal;
+
+    @include mobile {
+      line-height: 25px !important;
+    }
 
     &__wrapper {
       display: flex;
