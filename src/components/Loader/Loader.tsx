@@ -10,7 +10,7 @@ export const Loader: React.FC = () => {
     const timer = setTimeout(() => {
       setVisible(false);
       document.body.style.overflow = '';
-    }, 3000);
+    }, 5000);
 
     return () => {
       clearTimeout(timer);
